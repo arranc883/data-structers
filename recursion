@@ -1,0 +1,41 @@
+'''
+def count(i):
+    print(i)
+    if i == 0:
+        return
+    else:
+        count(i-1)
+count(20)
+
+'''
+
+'''
+
+def count2(i):
+    print(i)
+    if i > 0:
+        count2(i-1)
+
+count2(30)
+
+'''
+'''
+#non-recursion method
+num=int(input('enter a number '))
+num2=1
+for x in range(num,0,-1):
+    num2=num2*x
+print(num2)
+'''
+
+
+#recursion method
+def number(n):
+    if n==0 or n==1:
+        return 1
+    else:
+        return n*number(n-1)
+print(number(5))
+        
+
+    
