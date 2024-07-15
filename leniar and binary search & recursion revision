@@ -1,0 +1,109 @@
+#binary seach
+#has to be on an ordered list
+#chooses midle value then decides if middle value is higher of lower
+#if lower than getsd rid of higher version then vise versa
+
+
+'''def binary_search(arr,low,high,key):
+    mid=(low+high)//2
+    if low<=high:
+        if arr[mid]==key:
+            return mid
+        elif arr[mid]<key:
+            return binary_search(arr,mid+1,high,key)
+        else:
+            #make sure to put in right way round
+            return binary_search(arr,low,mid-1,key)
+        
+#print answer        
+print('(in index pos)',binary_search([1,2,3,4,5],0,5,3))'''
+
+###
+###
+###
+
+#method 2
+
+
+'''def binary(veggies,target):
+    low,high=0,len(veggies)-1
+    while low<=high:
+        mid=(low+high)//2
+        if veggies[mid]==target:
+            print(f'target{target} found at index {mid}')
+            return mid
+        elif veggies[mid]>target:
+            high=mid-1
+        else:
+            low=mid+1
+    print(f'target {target} is not found in list')
+
+veggies_list=['bell peper','brocolli','carrot','cucumber','tomato','zucchini']
+target_veggie='mango'
+
+result=binary(veggies_list,target_veggie)
+print(result)'''
+
+
+def binary(veggies,target):
+    low,high=0,len(veggies)-1
+    step=0
+    while low<=high:
+        step=step+1
+        mid=(low+high)//2
+        guess=veggies[mid]
+        print(f'step {step}: searching in the range{veggies[low:high+1]} guessed:{guess}')
+
+        if veggies[mid]==target:
+            print(f'target{target} found at index {mid}')
+            return mid
+        
+        elif veggies[mid]>target:
+            high=mid-1
+
+        else:
+            low=mid+1
+    print(f'target {target} is not found in list')
+
+
+veggies_list=['bell peper','brocolli','carrot','cucumber','tomato','zucchini']
+target_veggie='mango'
+
+result=binary(veggies_list,target_veggie)
+print(result)
+
+
+
+
+
+
+
+
+def recursive_sum(lst):
+    if not lst:
+        return 0
+    else:
+        return lst[0]+recursive_sum(lst[1:])
+    
+numbers=[5,3,3,4,5]
+result=recursive_sum(numbers)
+#####
+#####
+#####
+#####
+
+
+# .split convertes input to a list   
+# (VERY USFULLL)
+arr=list(map(int,input("enter a number: ").split()))
+key=int(input('what are you searching for? '))
+if key in arr:
+    print('key exists')
+else:
+    print('dont exist')
+
+
+
+    
+
+
