@@ -1,0 +1,51 @@
+#0(1)=constant time
+#0(logn)=logn time
+#0(n)=linear time
+
+#if reverse true it will be the oppostite direction
+'''
+lst=[4,3,2,1]
+lst.sort(reverse=False)
+print(lst)
+'''
+
+
+
+#program bubble_sort
+
+'''
+lst=[3,23,1,43,2345,4]
+for i in range(0,len(lst)):
+    for g in range(i,len(lst)):
+        if lst[i]>lst[g]:
+            lst[i],lst[g]=lst[g],lst[i]
+print(lst)
+'''
+
+#program insertion_sort
+
+'''def insertion(arry):
+    for i in range(1,len(arry)):
+        key=arry[i]
+        g=i-1
+        while g>=0 and arry[g]>key:
+            arry[g+1]=arry[g]
+            g-=1
+
+        arry[g+1]=key
+
+arry=[2,3,4,21,4,4,554,3,2,4,56,4]        
+insertion(arry)
+print(arry)'''
+
+def score(lst):
+    
+    for i in range(0,len(lst)):
+      for g in range(i,len(lst)):
+           if lst[i]>lst[g]:
+               lst[i],lst[g]=lst[g],lst[i]
+    
+
+lst=[3,23,1,43,2345,4]
+score(lst)
+print(lst)
