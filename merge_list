@@ -1,0 +1,30 @@
+def merge(lst):
+    if len(lst)<=1:
+        return lst
+    m=len(lst)//2
+    lefty=lst[:m]
+    righty=lst[m:]
+    Lmerge=merge(lefty)
+    Rmerge=merge(righty)
+    sort=merge2(Lmerge,Rmerge)
+    print(f'after merging{Lmerge} and {Rmerge}: {sort}')
+    return sort
+
+def merge2(left,right):
+    empty=[]
+    lefti=0
+    righti=0
+    while lefti<len(left) and righti<len(right):
+        if left[lefti]<right[righti]:
+            empty.append(left[lefti])
+            lefti+=1
+        else:
+            empty.append(right[righti])
+            righti+=1
+    empty.extend(left[lefti:])
+    empty.extend(right[righti:])
+    return empty
+
+lst=[13,23,45,65,34,23,65,345]
+sorted=merge(lst)
+print(sorted)
