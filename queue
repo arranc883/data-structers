@@ -1,0 +1,50 @@
+class queue:
+    def __init__(self,cap):
+        self.front=0
+        self.rear=-1
+        self.cap=cap
+        self.queue=[None]*cap
+
+
+    def enqueue(self,item):
+        if self.rear==self.cap-1:
+            print('queue is full')
+            return
+        
+        self.rear+=1
+        self.queue[self.rear]=item
+
+
+    def display(self):
+        for i in range(self.front,self.rear+1):
+            print(self.queue[i])
+        print()
+
+
+    def dequeue(self):
+        if self.front>self.rear:
+            print('queue is empty')
+            return
+        for i in range(self.rear):
+            self.queue[i]=self.queue[i+1]
+        self.rear-=1
+
+    def ft(self):
+        if self.front>self.rear:
+            print('queue is empty')
+            return
+        
+        print(self.queue[self.front])
+        
+        
+
+
+q=queue(3)
+q.enqueue(10)
+q.enqueue(45)
+q.enqueue(65)
+q.enqueue(3)
+q.display()
+q.dequeue()
+q.display()
+q.ft()
