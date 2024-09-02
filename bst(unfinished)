@@ -1,0 +1,40 @@
+class bst():
+    def __init__(self,data):
+        self.data=data
+        self.left=None
+        self.right=None
+    
+    def add(self,data):
+        if data==self.data:
+            return
+        
+        if data<self.data:
+            if self.left:
+                self.left.add(data)
+            else:
+                self.left=bst(data)
+
+        else:
+            if self.right:
+                self.right.add(data)
+            else:
+                self.right=bst(data)
+    def inorder_traversal(self):
+        lst=[]
+        if self.left:
+            lst+=self.left.inorder_traversal()
+        lst.append(self.data)
+
+        if self.right:
+            lst+=self.right.inorder_traversal()
+        return lst
+
+
+
+
+root=bst(324)
+root.add(345)
+root.add(453)
+root.add(465)
+node=root.inorder_traversal()
+print(node)
