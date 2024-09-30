@@ -1,0 +1,26 @@
+def add_edge(fruits,x,y):
+    fruits[x].append(y)
+    fruits[y].append(x)
+
+def dfs(fruits,visited,source):
+    visited[source]=True
+    print(source,end=' ')
+    for i in fruits[source]:
+        if not visited[i]:
+            dfs(fruits,visited,i)
+
+def dfs1(fruits,source):
+    visited=[False]*len(fruits)
+    dfs(fruits,visited,source)
+
+
+
+
+ver=5
+fruits=[[] for i in range(ver)]
+#defining edges of the grapgh
+edges=[[1,2],[1,0],[2,0],[2,3],[2,4]]
+for i in edges:
+    add_edge(fruits,i[0],i[1])
+    
+print(dfs1(fruits,1))   
