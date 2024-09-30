@@ -1,0 +1,39 @@
+#deque
+from collections import deque
+
+def bsf(fruits,s):
+    q=deque()
+    visited=[False]*len(fruits)
+    visited[s]=True
+    q.append(s)
+    while q:
+        sd=q.popleft()
+        print(sd,end=' ')
+        for i in fruits[sd]:
+            if not visited[i]:
+                visited[i]=True
+                q.append(i)
+
+
+def add_edge(fruits,x,y):
+    fruits[x].append(y)
+    fruits[y].append(x)
+
+
+
+
+
+
+
+ver=5
+fruits=[[] for i in range(ver)]
+#adding edges to the graph
+add_edge(fruits,0,1)
+add_edge(fruits,0,2)
+add_edge(fruits,1,3)
+add_edge(fruits,1,4)
+add_edge(fruits,2,4)
+
+
+print(bsf(fruits,3))
+
